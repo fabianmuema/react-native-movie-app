@@ -10,7 +10,7 @@ import { Image, StyleSheet } from 'react-native';
 import pic from '../assets/images/download.png';
 
 const BottomTab = createBottomTabNavigator();
-const INITIAL_ROUTE_NAME = 'Movies';
+const INITIAL_ROUTE_NAME = 'Home';
 
 export default function BottomTabNavigator({ navigation, route }) {
   // Set the header title on the parent stack navigator depending on the
