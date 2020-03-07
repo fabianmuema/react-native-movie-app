@@ -5,6 +5,7 @@ import MovieScreen from '../screens/MovieScreen';
 import LinksScreen from '../screens/ProfileScreen';
 import AboutScreen from '../screens/MusicScreen';
 import ShowsScreen from '../screens/ShowsScreen';
+import HomeScreen from '../screens/HomeScreen';
 import { Image, StyleSheet } from 'react-native';
 import pic from '../assets/images/download.png';
 
@@ -19,6 +20,14 @@ export default function BottomTabNavigator({ navigation, route }) {
 
   return (
     <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}>
+      <BottomTab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          title: 'Home',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-apps" />,
+        }}
+      />
       <BottomTab.Screen
         name="Movies"
         component={MovieScreen}

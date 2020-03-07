@@ -1,109 +1,111 @@
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { LinearGradient } from 'expo-linear-gradient';
-import { SearchBar } from 'react-native-elements'
+import * as WebBrowser from 'expo-web-browser';
 
-const GreeterText = [
-  'watch today?', 'do today?', 'stream today?', 'listen to today?'
-]
+import { MonoText } from '../components/StyledText';
 
-var randomNumber = Math.floor(Math.random() * (GreeterText.length))
-
-export default function MovieScreen() {
-  return (
-    <View style={styles.container}>
-      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-
-        <LinearGradient colors={['#000000', '#000']} style={styles.linearGradient}></LinearGradient>
-
-        <View style={styles.Greeter}>
-          <Text style={styles.greeterText}>
-            Hello, Fabian!
-          </Text>
-          <Text style={styles.underGreeter}>What would you like to</Text>
-          <Text style={styles.underUnderGreeter}>{GreeterText[randomNumber]}</Text>
+export default function MusicScreen() {
+    return (
+        <View style={styles.container}>
+            <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+                <View style={styles.helpContainer}>
+                    <Text style={styles.textAlign}>Hello, Music Screen</Text>
+                </View>
+            </ScrollView>
         </View>
-
-        <View style={styles.movieScreen}>
-          <SearchBar placeholder = 'Search movies/shows/music...'
-          style = {
-            styles.searchBar
-          }
-          platform = {
-            'ios'
-          }
-          round = {
-            true
-          }
-          containerStyle = {
-            {
-              backgroundColor: 'transparent',
-              width: 290,
-              borderWidth: 0,
-              marginLeft: 20
-            }
-          }
-          inputContainerStyle = {
-            {
-              borderRadius: 20
-            }
-          }
-          cancelButtonTitle = {true}
-          inputStyle = {
-            {
-              backgroundColor: 'lightgrey',
-              fontSize: 14,
-              paddingLeft: 5
-            }
-          }
-          lightTheme = {
-            true
-          }
-          clearIcon={true}
-          />
-          </View>
-      </ScrollView>
-    </View>
-  );
+    );
 }
 
-MovieScreen.navigationOptions = {
-  header: null,
+MusicScreen.navigationOptions = {
+    header: null,
 };
 
-
 const styles = StyleSheet.create({
-  movieScreen: {
-    backgroundColor: 'white',
-    position: "relative",
-    top: -114,
-    width: 400,
-    height: 200,
-    borderTopLeftRadius: 30,
-  },
-  container: {
-    flex: 1,
-  },
-  linearGradient: {
-    width: 400,
-    height: 200,
-  },
-  Greeter: {
-    position: 'relative',
-    top: -130,
-    paddingLeft: 20
-  },
-  greeterText: {
-    color: 'lightgrey',
-    opacity: 0.5
-  },
-  underGreeter: {
-    color: 'white',
-    fontSize: 25
-  },
-  underUnderGreeter: {
-    color: 'white',
-    fontSize: 25
-  }
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+    },
+    developmentModeText: {
+        marginBottom: 20,
+        color: 'rgba(0,0,0,0.4)',
+        fontSize: 14,
+        lineHeight: 19,
+        textAlign: 'center',
+    },
+    contentContainer: {
+        paddingTop: 30,
+    },
+    welcomeContainer: {
+        alignItems: 'center',
+        marginTop: 10,
+        marginBottom: 20,
+    },
+    welcomeImage: {
+        width: 100,
+        height: 80,
+        resizeMode: 'contain',
+        marginTop: 3,
+        marginLeft: -10,
+    },
+    getStartedContainer: {
+        alignItems: 'center',
+        marginHorizontal: 50,
+    },
+    homeScreenFilename: {
+        marginVertical: 7,
+    },
+    codeHighlightText: {
+        color: 'rgba(96,100,109, 0.8)',
+    },
+    codeHighlightContainer: {
+        backgroundColor: 'rgba(0,0,0,0.05)',
+        borderRadius: 3,
+        paddingHorizontal: 4,
+    },
+    getStartedText: {
+        fontSize: 17,
+        color: 'rgba(96,100,109, 1)',
+        lineHeight: 24,
+        textAlign: 'center',
+    },
+    tabBarInfoContainer: {
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        ...Platform.select({
+            ios: {
+                shadowColor: 'black',
+                shadowOffset: { width: 0, height: -3 },
+                shadowOpacity: 0.1,
+                shadowRadius: 3,
+            },
+            android: {
+                elevation: 20,
+            },
+        }),
+        alignItems: 'center',
+        backgroundColor: '#fbfbfb',
+        paddingVertical: 20,
+    },
+    tabBarInfoText: {
+        fontSize: 17,
+        color: 'rgba(96,100,109, 1)',
+        textAlign: 'center',
+    },
+    navigationFilename: {
+        marginTop: 5,
+    },
+    helpContainer: {
+        marginTop: 15,
+        alignItems: 'center',
+    },
+    helpLink: {
+        paddingVertical: 15,
+    },
+    helpLinkText: {
+        fontSize: 14,
+        color: '#2e78b7',
+    },
 });
