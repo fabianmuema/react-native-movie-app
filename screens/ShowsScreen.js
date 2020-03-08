@@ -22,7 +22,7 @@ export default function ShowsScreen() {
                     containerStyle = {
                         {
                         backgroundColor: 'transparent',
-                        width: 290,
+                        width: 300,
                         borderWidth: 0,
 
                         }
