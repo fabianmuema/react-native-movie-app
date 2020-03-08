@@ -1,16 +1,14 @@
 import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import * as WebBrowser from 'expo-web-browser';
-
-import { MonoText } from '../components/StyledText';
+import {SearchBar} from 'react-native-elements';
 
 export default function MusicScreen() {
     return (
         <View style={styles.container}>
             <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
                 <View style={styles.helpContainer}>
-                    < SearchBar placeholder = 'Search movies/shows/music...'
+                    <SearchBar placeholder = 'Search music...'
                     style = {
                         styles.searchBar
                     }
@@ -50,6 +48,9 @@ export default function MusicScreen() {
                         true
                     }
                     />
+                </View>
+                <View>
+
                 </View>
             </ScrollView>
         </View>

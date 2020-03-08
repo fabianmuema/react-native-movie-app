@@ -9,7 +9,7 @@ export default function ShowsScreen() {
         <View style={styles.container}>
             <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
                 <View style={styles.helpContainer}>
-                    <SearchBar placeholder = 'Search movies/shows/music...'
+                    <SearchBar placeholder = 'Search shows...'
                     style = {
                         styles.searchBar
                     }
