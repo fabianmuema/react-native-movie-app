@@ -60,7 +60,7 @@ export default function ShowsScreen() {
 
                 <View style={styles.recentMovies}>
                     <View style={{flex: 1, flexDirection: "row"}}>
-                       <Text style={styles.BoldText}>Recommended</Text><Text style={styles.greyText}> Movies</Text>
+                       <Text style={styles.BoldText}>Recommended</Text><Text style={styles.greyText}> Shows</Text>
                     </View>
                     <View>
                         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -77,7 +77,7 @@ export default function ShowsScreen() {
 
                 <View style={styles.recentMovies}>
                     <View style={{flex: 1, flexDirection: "row"}}>
-                       <Text style={styles.BoldText}>Recent</Text><Text style={styles.greyText}> Movies</Text>
+                       <Text style={styles.BoldText}>Recent</Text><Text style={styles.greyText}> Shows</Text>
                     </View>
                     <View>
                         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -93,7 +93,24 @@ export default function ShowsScreen() {
                 </View>
                 <View style={styles.recentMovies}>
                     <View style={{flex: 1, flexDirection: "row"}}>
-                       <Text style={styles.BoldText}>Popular</Text><Text style={styles.greyText}> Movies</Text>
+                       <Text style={styles.BoldText}>Popular</Text><Text style={styles.greyText}> Shows</Text>
+                    </View>
+                    <View>
+                        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                            <Image source={{uri: 'https://walter.trakt.tv/images/movies/000/307/054/posters/thumb/ab1a43b360.jpg.webp'}} style={styles.nowPlayingMovieImages}/>
+                            <Image source={{ uri: 'https://walter.trakt.tv/images/movies/000/360/095/posters/thumb/25b1652585.jpg.webp'}} style={styles.nowPlayingMovieImages}/>
+                            <Image source={{ uri: 'https://walter.trakt.tv/images/movies/000/211/394/posters/thumb/3d953c303e.jpg.webp' }} style={styles.nowPlayingMovieImages} />
+                            <Image source={{ uri: 'https://walter.trakt.tv/images/movies/000/277/572/posters/thumb/770740180b.jpg.webp' }} style={styles.nowPlayingMovieImages} />
+                            <Image source={{ uri: 'https://walter.trakt.tv/images/movies/000/306/046/posters/thumb/660bc9e167.jpg.webp' }} style={styles.nowPlayingMovieImages} />
+                            <Image source={{ uri: 'https://walter.trakt.tv/images/movies/000/301/015/posters/thumb/77cebb5f45.jpg.webp' }} style={styles.nowPlayingMovieImages} />
+                            <Image source={{ uri: 'https://walter.trakt.tv/images/movies/000/322/988/posters/thumb/b2fa5f3d6c.jpg.webp' }} style={styles.nowPlayingMovieImages} />
+                        </ScrollView>
+                    </View>
+                </View>
+
+                <View style={styles.recentMovies}>
+                    <View style={{flex: 1, flexDirection: "row"}}>
+                       <Text style={styles.BoldText}>Recent</Text><Text style={styles.greyText}> Seasons</Text>
                     </View>
                     <View>
                         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -112,7 +129,7 @@ export default function ShowsScreen() {
     );
 }
 
-MovieScreen.navigationOptions = {
+ShowsScreen.navigationOptions = {
     header: null,
 };
 
