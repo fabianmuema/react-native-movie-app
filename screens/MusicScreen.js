@@ -10,7 +10,46 @@ export default function MusicScreen() {
         <View style={styles.container}>
             <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
                 <View style={styles.helpContainer}>
-                    <Text style={styles.textAlign}>Hello, Music Screen</Text>
+                    < SearchBar placeholder = 'Search movies/shows/music...'
+                    style = {
+                        styles.searchBar
+                    }
+                    platform = {
+                        'ios'
+                    }
+                    round = {
+                        true
+                    }
+                    containerStyle = {
+                        {
+                            backgroundColor: 'transparent',
+                            width: 290,
+                            borderWidth: 0,
+
+                        }
+                    }
+                    inputContainerStyle = {
+                        {
+                            borderRadius: 20
+                        }
+                    }
+                    cancelButtonTitle = {
+                        true
+                    }
+                    inputStyle = {
+                        {
+                            backgroundColor: 'lightgrey',
+                            fontSize: 14,
+                            paddingLeft: 5
+                        }
+                    }
+                    lightTheme = {
+                        true
+                    }
+                    clearIcon = {
+                        true
+                    }
+                    />
                 </View>
             </ScrollView>
         </View>
