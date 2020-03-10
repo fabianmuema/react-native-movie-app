@@ -1,9 +1,12 @@
-import React, { Component, useState} from 'react';
-import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import React, { Component} from 'react';
+import { StyleSheet, Text, View, Image, Button, Dimensions } from 'react-native';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { LinearGradient } from 'expo-linear-gradient';
-import { SearchBar } from 'react-native-elements';
+import { SearchBar} from 'react-native-elements';
 import Modal from 'react-native-modal';
+import { Ionicons } from '@expo/vector-icons';
+
+const width = Dimensions.get('window').width;
 
 const GreeterText = [
   'watch today?', 'do today?', 'stream today?', 'listen to today?', 'enjoy today?'
@@ -11,7 +14,7 @@ const GreeterText = [
 
 var randomNumber = Math.floor(Math.random() * (GreeterText.length))
 
-export default class MovieScreen extends Component {
+export default class HomeScreen extends Component {
   state = {
     isModalVisible: false
   };
@@ -27,11 +30,26 @@ export default class MovieScreen extends Component {
     <View style={styles.container}>
       <ScrollView>
 
-        <Modal isVisible={this.state.isModalVisible} animationIn="slideInUp" animationInTiming={300} hasBackdrop={true} backdropColor="white" onBackdropPress={() => this.setState({ isVisible: false })}   onSwipeComplete={() => this.setState({ isVisible: false })}
-   swipeDirection={['up','down']} backdropOpacity={1}
-   >
-          <View style={{ flex: 1 }}>
-            <Text>Hello!</Text>
+        <Modal style={styles.Modal} isVisible={this.state.isModalVisible} animationIn="slideInUp" animationInTiming={300} hasBackdrop={false} onBackdropPress={() => this.setState({ isVisible: false })} onSwipeMove={() => this.setState({ isVisible: false })}
+        swipeDirection={'down'} backdropOpacity={1} onBackButtonPress={() => this.toggleModal}
+        >
+          <View style={styles.modalChild}>
+              <Image source={{uri: 'https://walter.trakt.tv/images/movies/000/430/404/fanarts/thumb/638ab672dc.jpg.webp'}} style={{ width: width, height: 200}}/>
+
+              <View style={styles.modalPoster}>
+                <Image source={{uri: 'https://walter.trakt.tv/images/movies/000/430/404/posters/thumb/2eb5b45e8d.jpg.webp'}} style={{height: 150, width: 100, marginLeft: 5, borderRadius: 10}} />
+
+                <View style={styles.posterTextView}>
+                  <Text style={styles.posterText}>
+                    Spenser Confidential
+                  </Text>
+
+                  <View style={styles.posterButton}>
+                    <Button title="Watch" color={"tomato"}  style={{ borderRadius: 20}} onPress={() => {}}/>
+                    <Ionicons name="ios-heart" size={32}  color={'tomato'}/>
+                  </View>
+                </View>
+              </View>
             <Button title="Hide modal" onPress={this.toggleModal} />
           </View>
         </Modal>
@@ -164,11 +182,45 @@ export default class MovieScreen extends Component {
         }
 }
 
-MovieScreen.navigationOptions = {
+HomeScreen.navigationOptions = {
   header: null,
 };
 
 const styles = StyleSheet.create({
+  posterButton: {
+    marginTop: 20,
+    width: 125,
+    flexDirection: "row",
+    justifyContent: "space-between"
+  },
+  posterText: {
+    fontWeight: "bold",
+    textTransform: 'uppercase',
+    fontSize: width/20,
+    color: "white"
+  },
+  posterTextView: {
+    margin: 10,
+    width: (width/0.5)
+
+  },
+  modalPoster: {
+    flex: 1,
+    flexDirection: "row",
+    position: "relative",
+    zIndex: 2,
+    marginTop: -80,
+    backgroundColor: "rgba(0, 0, 0, 0.4)",
+  },
+  Modal: {
+    margin: 0
+  },
+  modalChild: {
+    margin: 0,
+    backgroundColor: "white",
+    flex: 1,
+    width: width
+  },
   Series: {
     marginLeft: 5,
   },
