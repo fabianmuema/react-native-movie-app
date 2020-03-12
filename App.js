@@ -1,22 +1,25 @@
 import * as React from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
-import { SplashScreen } from 'expo';
+import {Platform, StatusBar, StyleSheet, View} from 'react-native';
+import {SplashScreen} from 'expo';
 import * as Font from 'expo-font';
-import { Ionicons } from '@expo/vector-icons';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import {Ionicons} from '@expo/vector-icons';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 
 import BottomTabNavigator from './navigation/BottomTabNavigator';
 import useLinking from './navigation/useLinking';
+// screens importation
+import Movie from './screens/Movie';
+import Home from './screens/HomeScreen';
+import Movies from './screens/MovieScreen';
 
-const Stack = createStackNavigator(
-);
+const Stack = createStackNavigator();
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = React.useState(false);
   const [initialNavigationState, setInitialNavigationState] = React.useState();
   const containerRef = React.useRef();
-  const { getInitialState } = useLinking(containerRef);
+  const {getInitialState} = useLinking(containerRef);
 
   // Load any resources or data that we need prior to rendering the app
   React.useEffect(() => {
@@ -25,6 +28,7 @@ export default function App(props) {
         SplashScreen.preventAutoHide();
 
         // Load our initial navigation state
+        // noinspection JSCheckFunctionSignatures
         setInitialNavigationState(await getInitialState());
 
         // Load fonts
@@ -54,7 +58,10 @@ export default function App(props) {
           <Stack.Navigator screenOptions={{
             headerShown: false
           }}>
-            <Stack.Screen name="Root" component={BottomTabNavigator} />
+            <Stack.Screen name="Root" component={BottomTabNavigator}/>
+            <Stack.Screen name="Home" component={Home}/>
+            <Stack.Screen name="Movies" component={Movies}/>
+            <Stack.Screen name="Movie" component={Movie}/>
 
           </Stack.Navigator>
         </NavigationContainer>

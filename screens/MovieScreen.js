@@ -1,29 +1,29 @@
 import * as React from 'react';
-import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, TextComponent } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
-import { SearchBar } from 'react-native-elements';
+import {Image, Platform, StyleSheet, Text, View} from 'react-native';
+import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
+import {SearchBar} from 'react-native-elements';
 
 
-export default function MovieScreen() {
+export default function MovieScreen({navigation}) {
     return (
         <View style={styles.container}>
             <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
                 <View style={styles.helpContainer}>
-                    <SearchBar placeholder = 'Search movies...'
-                    style = {
-                        styles.searchBar
-                    }
-                    platform = {
-                        'ios'
-                    }
-                    round = {
-                        true
-                    }
-                    containerStyle = {
-                        {
-                        backgroundColor: 'transparent',
-                        width: 290,
-                        borderWidth: 0,
+                    <SearchBar placeholder='Search movies...'
+                               style={
+                                   styles.searchBar
+                               }
+                               platform={
+                                   'ios'
+                               }
+                               round={
+                                   true
+                               }
+                               containerStyle={
+                                   {
+                                       backgroundColor: 'transparent',
+                                       width: 290,
+                                       borderWidth: 0,
 
                         }
                     }
@@ -48,13 +48,30 @@ export default function MovieScreen() {
                 </View>
                 <View style={styles.featuredMovies}>
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                        <Image source={{uri: 'https://fanart.tv/detailpreview/fanart/tv/364093/tvthumb/star-trek-picard-5e2bcbcd25756.jpg'}} style={styles.featuredMovieImages}/>
-                        <Image source={{ uri: 'https://fanart.tv/detailpreview/fanart/tv/295760/tvthumb/dcs-legends-of-tomorrow-58a073b3c0df8.jpg'}} style={styles.featuredMovieImages}/>
-                        <Image source={{ uri: 'https://fanart.tv/detailpreview/fanart/tv/372081/tvthumb/hunters-5e14697b2dd38.jpg' }} style={styles.featuredMovieImages} />
-                        <Image source={{ uri: 'https://fanart.tv/detailpreview/fanart/tv/277366/tvthumb/jim-hensons-creature-shop-challenge-5e5a2f5bafe28.jpg' }} style={styles.featuredMovieImages} />
-                        <Image source={{ uri: 'https://fanart.tv/detailpreview/fanart/tv/332331/tvthumb/altered-carbon-5a7446a30d1e7.jpg' }} style={styles.featuredMovieImages} />
-                        <Image source={{ uri: 'https://fanart.tv/detailpreview/fanart/tv/354265/tvthumb/deputy-5e4ea71403932.jpg' }} style={styles.featuredMovieImages} />
-                        <Image source={{ uri: 'https://walter.trakt.tv/images/movies/000/322/988/posters/thumb/b2fa5f3d6c.jpg.webp' }} style={styles.featuredMovieImages} />
+                        <TouchableOpacity onPress={navigation.navigate('Home')}>
+                            <Image
+                                source={{uri: 'https://fanart.tv/detailpreview/fanart/tv/364093/tvthumb/star-trek-picard-5e2bcbcd25756.jpg'}}
+                                style={styles.featuredMovieImages}/>
+                        </TouchableOpacity>
+
+                        <Image
+                            source={{uri: 'https://fanart.tv/detailpreview/fanart/tv/295760/tvthumb/dcs-legends-of-tomorrow-58a073b3c0df8.jpg'}}
+                            style={styles.featuredMovieImages}/>
+                        <Image
+                            source={{uri: 'https://fanart.tv/detailpreview/fanart/tv/372081/tvthumb/hunters-5e14697b2dd38.jpg'}}
+                            style={styles.featuredMovieImages}/>
+                        <Image
+                            source={{uri: 'https://fanart.tv/detailpreview/fanart/tv/277366/tvthumb/jim-hensons-creature-shop-challenge-5e5a2f5bafe28.jpg'}}
+                            style={styles.featuredMovieImages}/>
+                        <Image
+                            source={{uri: 'https://fanart.tv/detailpreview/fanart/tv/332331/tvthumb/altered-carbon-5a7446a30d1e7.jpg'}}
+                            style={styles.featuredMovieImages}/>
+                        <Image
+                            source={{uri: 'https://fanart.tv/detailpreview/fanart/tv/354265/tvthumb/deputy-5e4ea71403932.jpg'}}
+                            style={styles.featuredMovieImages}/>
+                        <Image
+                            source={{uri: 'https://walter.trakt.tv/images/movies/000/322/988/posters/thumb/b2fa5f3d6c.jpg.webp'}}
+                            style={styles.featuredMovieImages}/>
                     </ScrollView>
                 </View>
 

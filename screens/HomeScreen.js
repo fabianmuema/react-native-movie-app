@@ -1,76 +1,38 @@
-import React, { Component} from 'react';
-import { StyleSheet, Text, View, Image, Button, Dimensions } from 'react-native';
-import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
-import { LinearGradient } from 'expo-linear-gradient';
-import { SearchBar} from 'react-native-elements';
-import Modal from 'react-native-modal';
-import { Ionicons } from '@expo/vector-icons';
+import React from 'react';
+import {Dimensions, Image, StyleSheet, Text, View} from 'react-native';
+import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
+import {LinearGradient} from 'expo-linear-gradient';
+import {SearchBar} from 'react-native-elements';
 
 const width = Dimensions.get('window').width;
 
 const GreeterText = [
   'watch today?', 'do today?', 'stream today?', 'listen to today?', 'enjoy today?'
-]
+];
 
-var randomNumber = Math.floor(Math.random() * (GreeterText.length))
+let randomNumber = Math.floor(Math.random() * (GreeterText.length));
 
-export default class HomeScreen extends Component {
-  state = {
-    isModalVisible: false
-  };
-
-  toggleModal = () => {
-    this.setState({ isModalVisible: !this.state.isModalVisible });
-  };
-
-  render() {
-
+export default function HomeScreen({navigation}) {
   return (
 
-    <View style={styles.container}>
-      <ScrollView>
+      <View style={styles.container}>
+        <ScrollView>
+          <LinearGradient colors={['#000000', '#000']} style={styles.linearGradient}></LinearGradient>
 
-        <Modal style={styles.Modal} isVisible={this.state.isModalVisible} animationIn="slideInUp" animationInTiming={300} hasBackdrop={false} onBackdropPress={() => this.setState({ isVisible: false })} onSwipeMove={() => this.setState({ isVisible: false })}
-        swipeDirection={'down'} backdropOpacity={1} onBackButtonPress={() => this.toggleModal}
-        >
-          <View style={styles.modalChild}>
-              <Image source={{uri: 'https://walter.trakt.tv/images/movies/000/430/404/fanarts/thumb/638ab672dc.jpg.webp'}} style={{ width: width, height: 200}}/>
-
-              <View style={styles.modalPoster}>
-                <Image source={{uri: 'https://walter.trakt.tv/images/movies/000/430/404/posters/thumb/2eb5b45e8d.jpg.webp'}} style={{height: 150, width: 100, marginLeft: 5, borderRadius: 10}} />
-
-                <View style={styles.posterTextView}>
-                  <Text style={styles.posterText}>
-                    Spenser Confidential
-                  </Text>
-
-                  <View style={styles.posterButton}>
-                    <Button title="Watch" color={"tomato"}  style={{ borderRadius: 20}} onPress={() => {}}/>
-                    <Ionicons name="ios-heart" size={32}  color={'tomato'}/>
-                  </View>
-                </View>
-              </View>
-            <Button title="Hide modal" onPress={this.toggleModal} />
+          <View style={styles.Greeter}>
+            <Text style={styles.greeterText}>
+              Hello, Fabian!
+            </Text>
+            <Text style={styles.underGreeter}>What would you like to</Text>
+            <Text style={styles.underUnderGreeter}>{GreeterText[randomNumber]}</Text>
           </View>
-        </Modal>
-        <LinearGradient colors={['#000000', '#000']} style={styles.linearGradient}></LinearGradient>
 
-        <View style={styles.Greeter}>
-          <Text style={styles.greeterText}>
-            Hello, Fabian!
-          </Text>
-          <Text style={styles.underGreeter}>What would you like to</Text>
-          <Text style={styles.underUnderGreeter}>{GreeterText[randomNumber]}</Text>
-        </View>
+          <View style={styles.movieScreen}>
+            <SearchBar placeholder='Search movies/shows/music...'
 
-        <View style={styles.movieScreen}>
-          <SearchBar placeholder = 'Search movies/shows/music...'
-          style = {
-            styles.searchBar
-          }
-          platform = {
-            'ios'
-          }
+                       platform={
+                         'ios'
+                       }
           round = {
             true
           }
@@ -87,7 +49,6 @@ export default class HomeScreen extends Component {
               borderRadius: 20
             }
           }
-          cancelButtonTitle = {true}
           inputStyle = {
             {
               backgroundColor: 'lightgrey',
@@ -101,22 +62,36 @@ export default class HomeScreen extends Component {
           clearIcon={true}
           />
 
-        <View style={styles.Movies}>
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          <TouchableOpacity onPress={this.toggleModal}>
-            <Image source={{uri: 'https://fanart.tv/detailpreview/fanart/tv/364093/tvthumb/star-trek-picard-5e2bcbcd25756.jpg'}} style={styles.movieImages}/>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={this.toggleModal}>
-          <Image source={{ uri: 'https://fanart.tv/detailpreview/fanart/tv/295760/tvthumb/dcs-legends-of-tomorrow-58a073b3c0df8.jpg'}} style={styles.movieImages}/>
-          </TouchableOpacity>
-          <Image source={{ uri: 'https://fanart.tv/detailpreview/fanart/tv/372081/tvthumb/hunters-5e14697b2dd38.jpg' }} style={styles.movieImages} />
-          <Image source={{ uri: 'https://fanart.tv/detailpreview/fanart/tv/277366/tvthumb/jim-hensons-creature-shop-challenge-5e5a2f5bafe28.jpg' }} style={styles.movieImages} />
-          <Image source={{ uri: 'https://fanart.tv/detailpreview/fanart/tv/332331/tvthumb/altered-carbon-5a7446a30d1e7.jpg' }} style={styles.movieImages} />
-          <Image source={{ uri: 'https://fanart.tv/detailpreview/fanart/tv/354265/tvthumb/deputy-5e4ea71403932.jpg' }} style={styles.movieImages} />
-          <Image source={{ uri: 'https://walter.trakt.tv/images/movies/000/322/988/posters/thumb/b2fa5f3d6c.jpg.webp' }} style={styles.movieImages} />
+            <View style={styles.Movies}>
+              <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                <TouchableOpacity onPress={navigation.navigate('Movies')}>
+                  <Image
+                      source={{uri: 'https://fanart.tv/detailpreview/fanart/tv/364093/tvthumb/star-trek-picard-5e2bcbcd25756.jpg'}}
+                      style={styles.movieImages}/>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                  <Image
+                      source={{uri: 'https://fanart.tv/detailpreview/fanart/tv/295760/tvthumb/dcs-legends-of-tomorrow-58a073b3c0df8.jpg'}}
+                      style={styles.movieImages}/>
+                </TouchableOpacity>
+                <Image
+                    source={{uri: 'https://fanart.tv/detailpreview/fanart/tv/372081/tvthumb/hunters-5e14697b2dd38.jpg'}}
+                    style={styles.movieImages}/>
+                <Image
+                    source={{uri: 'https://fanart.tv/detailpreview/fanart/tv/277366/tvthumb/jim-hensons-creature-shop-challenge-5e5a2f5bafe28.jpg'}}
+                    style={styles.movieImages}/>
+                <Image
+                    source={{uri: 'https://fanart.tv/detailpreview/fanart/tv/332331/tvthumb/altered-carbon-5a7446a30d1e7.jpg'}}
+                    style={styles.movieImages}/>
+                <Image
+                    source={{uri: 'https://fanart.tv/detailpreview/fanart/tv/354265/tvthumb/deputy-5e4ea71403932.jpg'}}
+                    style={styles.movieImages}/>
+                <Image
+                    source={{uri: 'https://walter.trakt.tv/images/movies/000/322/988/posters/thumb/b2fa5f3d6c.jpg.webp'}}
+                    style={styles.movieImages}/>
 
-        </ScrollView>
-      </View>
+              </ScrollView>
+            </View>
 
        <View style={styles.nowPlayingMovies}>
         <Text style={styles.popularText}>Popular Movies</Text>
@@ -179,12 +154,7 @@ export default class HomeScreen extends Component {
       </ScrollView>
     </View>
   );
-        }
 }
-
-HomeScreen.navigationOptions = {
-  header: null,
-};
 
 const styles = StyleSheet.create({
   posterButton: {

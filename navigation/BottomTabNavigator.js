@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import TabBarIcon from '../components/TabBarIcon';
 import MovieScreen from '../screens/MovieScreen';
 import LinksScreen from '../screens/ProfileScreen';
 import AboutScreen from '../screens/MusicScreen';
 import ShowsScreen from '../screens/ShowsScreen';
 import HomeScreen from '../screens/HomeScreen';
-import { Image, StyleSheet } from 'react-native';
+import {Image, StyleSheet} from 'react-native';
 import pic from '../assets/images/download.png';
 
 const BottomTab = createBottomTabNavigator();
@@ -19,17 +19,18 @@ export default function BottomTabNavigator({ navigation, route }) {
   navigation.setOptions({ headerTitle: getHeaderTitle(route) });
 
   return (
-    <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}>
-      <BottomTab.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-apps" />,
-        }}
-      />
-      <BottomTab.Screen
-        name="Movies"
+
+      <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}>
+          <BottomTab.Screen
+              name="Home"
+              component={HomeScreen}
+              options={{
+                  title: 'Home',
+                  tabBarIcon: ({focused}) => <TabBarIcon focused={focused} name="md-apps"/>,
+              }}
+          />
+          <BottomTab.Screen
+              name="Movies"
         component={MovieScreen}
         options={{
           title: 'Movies',
@@ -56,8 +57,10 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Profile"
         component={LinksScreen}
         options={{
-          title: 'Profile',
-          tabBarIcon: ({ focused }) => <Image source={pic} style={styles.pic}/>,
+            title: 'Profile',
+            tabBarIcon: () => {
+                return <Image source={pic} style={styles.pic}/>;
+            },
         }}
       />
     </BottomTab.Navigator>
@@ -71,7 +74,7 @@ function getHeaderTitle(route) {
     case 'Movies':
       return 'Movies';
     case 'Shows':
-      return 'Shows'
+        return 'Shows';
     case 'Music':
       return 'Music';
     case 'Profile':
@@ -81,9 +84,9 @@ function getHeaderTitle(route) {
 }
 
 const styles = StyleSheet.create({
-  pic: {
-    width: 25,
-    height: 25,
-    borderRadius: 50
-  }
-})
+    pic: {
+        width: 25,
+        height: 25,
+        borderRadius: 50
+    }
+});
