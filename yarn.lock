@@ -1089,10 +1089,10 @@
     util.promisify "^1.0.0"
     write-file-atomic "^2.3.0"
 
-"@expo/vector-icons@^10.0.2", "@expo/vector-icons@~10.0.0":
-  version "10.0.6"
-  resolved "https://registry.yarnpkg.com/@expo/vector-icons/-/vector-icons-10.0.6.tgz#5718953ff0b97827d11dae5787976fa8ce5caaed"
-  integrity sha512-qNlKPNdf073LpeEpyClxAh0D3mmIK4TGAQzeKR0HVwf14RIEe17+mLW5Z6Ka5Ho/lUtKMRPDHumSllFyKvpeGg==
+"@expo/vector-icons@^10.0.2", "@expo/vector-icons@~10.1.0":
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/@expo/vector-icons/-/vector-icons-10.1.0.tgz#3fb2517924b031c1b98f86fa51a2032a257759b0"
+  integrity sha512-6ikFslHORJgsb8wKeSgXYfZNNXsiTb3yQf5xaNyGUCYg4zqE7VchdhnH9yZKTI3Lu16jna52pHQZl+3jcOSAbQ==
   dependencies:
     lodash "^4.17.4"
 
