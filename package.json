@@ -19,7 +19,7 @@
     "@react-navigation/stack": "^5.3.2",
     "@react-navigation/web": "~1.0.0-alpha.9",
     "expo": "~37.0.9",
-    "expo-asset": "~8.1.4",
+    "expo-asset": "~8.1.5",
     "expo-constants": "~9.0.0",
     "expo-font": "~8.1.1",
     "expo-linear-gradient": "~8.1.0",
