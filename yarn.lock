@@ -1530,10 +1530,10 @@
     query-string "^6.11.1"
     react-is "^16.13.0"
 
-"@react-navigation/core@^5.11.0":
-  version "5.11.0"
-  resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-5.11.0.tgz#329cf455bcdc82ea6b171fd945db27406c1e3663"
-  integrity sha512-ro54NCCW25ngoJrfKzJgKmFqabEWjIpMeGYXa54dEnIT6tEoJW0Z/C60DfhRs8nYHOSEYsDetiQk3yL48EXCVA==
+"@react-navigation/core@^5.11.1":
+  version "5.11.1"
+  resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-5.11.1.tgz#c4890910ba3d6332ee6873f0adb3d3d13cf4fa4c"
+  integrity sha512-zJ/w84msKBhgRR35/tHdY1facxdnN/WP9Ebutnjp/J9ENuv7fHXhYlxX+oIRrMn+/MnbG79RVnYcO/r4lO8OTQ==
   dependencies:
     "@react-navigation/routers" "^5.4.8"
     escape-string-regexp "^4.0.0"
@@ -1550,12 +1550,12 @@
     hoist-non-react-statics "^3.3.2"
     react-native-safe-area-view "^0.14.9"
 
-"@react-navigation/native@^5.6.0":
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-5.6.0.tgz#3b03a35dd1337d3d3c7d170e9b6f7d0a666109bd"
-  integrity sha512-P+kr2Jz8aouNmtLRsxzihApFHpp14e4eyyir2t1nc9O2KKdZ5tULPIwdYXGEX0n2ty3BnCU0xkI2ZsK+qY0YnQ==
+"@react-navigation/native@^5.5.1":
+  version "5.6.1"
+  resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-5.6.1.tgz#a603b921f39fe3fcfcc27232d71b24e80effc1f2"
+  integrity sha512-jnSNEnuRzqLvG+7QcMthfB8eCZIzAE0Wku7HDgzfjFS2iA7Oa9ugeX/1qdP9heT2Mp0t9BDQ4XX4boJma9Z/xg==
   dependencies:
-    "@react-navigation/core" "^5.11.0"
+    "@react-navigation/core" "^5.11.1"
     nanoid "^3.1.9"
 
 "@react-navigation/routers@^5.4.8":
@@ -6397,10 +6397,10 @@ react-native-view-shot@3.1.2:
   resolved "https://registry.yarnpkg.com/react-native-view-shot/-/react-native-view-shot-3.1.2.tgz#8c8e84c67a4bc8b603e697dbbd59dbc9b4f84825"
   integrity sha512-9u9fPtp6a52UMoZ/UCPrCjKZk8tnkI9To0Eh6yYnLKFEGkRZ7Chm6DqwDJbYJHeZrheCCopaD5oEOnRqhF4L2Q==
 
-react-native-web@~0.12.3:
-  version "0.12.3"
-  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.12.3.tgz#9f43301539672d46a302ee642afd29243a4376d5"
-  integrity sha512-6evhZl3tzYz5IUesbHEC4/ooUkXJPIAtrmDJWe3CdpDrV6rvBNNa1Utq192YKbHPzGtETuw+5X59K0O1n5EjWQ==
+react-native-web@~0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.13.0.tgz#02ea5d2bcf06891b61596cd3f9492acffad0b1d9"
+  integrity sha512-u4d4LhgwAQ23fZxhq7yxhUUK8eGl0ER2C/qPHQVKo6dottqkI7b2HxWJtBpWklmY+Vtoo4yGN4m3w6SIyE4MDQ==
   dependencies:
     array-find-index "^1.0.2"
     create-react-class "^15.6.2"
