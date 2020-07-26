@@ -40,7 +40,7 @@
     "react-navigation": "^4.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.3",
+    "@babel/core": "^7.10.5",
     "babel-preset-expo": "~8.2.3",
     "jest-expo": "~37.0.0"
   },
