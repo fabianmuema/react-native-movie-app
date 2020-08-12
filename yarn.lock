@@ -6570,10 +6570,10 @@ react-native-dominant-color@^1.0.0:
   resolved "https://registry.yarnpkg.com/react-native-dominant-color/-/react-native-dominant-color-1.0.0.tgz#8ad739ff9b91e631d599d2fce770466c74f63195"
   integrity sha512-JL8WdNuQ4bjBCwwQlWUrHeGBH1n1ZujDV+DIbfViaE7wR2Eknqa2toZdhAfdHrSc8s6ayWcIwej98SHULpWFNQ==
 
-react-native-elements@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/react-native-elements/-/react-native-elements-2.2.0.tgz#18e1269d31530fbbd079e5cc285b83b2bbf27676"
-  integrity sha512-OkXH96ecqDFcrjxzOWw2h3nt8TxX1ghzvJ/W4OGaxm7u7LC0LzE3SMAx/rh/Zyp/jkdXap032ZLm1mSrxrBuuQ==
+react-native-elements@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/react-native-elements/-/react-native-elements-2.2.1.tgz#1d95aa7ee2020f72e0bc779d574fefcf072b7086"
+  integrity sha512-JhveP4ZQzZrMef9sBJfjfgfdbKafGnqZGosVr4hb3At8c1wJ3QFgOGUsKxhpjpF2wr/RgLbP2UV3rS1cD+t7IA==
   dependencies:
     "@types/react-native-vector-icons" "^6.4.5"
     color "^3.1.0"
