@@ -3443,6 +3443,11 @@ expo-linear-gradient@~8.2.1:
   dependencies:
     prop-types "15.7.2"
 
+expo-linear-gradient@~8.3.0:
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/expo-linear-gradient/-/expo-linear-gradient-8.3.0.tgz#4a976ac0d8d586966187b34cb3a2ac8a701533fa"
+  integrity sha512-B7vi0mzWXleKeI2iiFrCC6RiIYxtoK7RWp/Wmaxjlux4Yi6SBDjIoL0tXvfa14C7ZiJjA4wm1/3lcbhiGvQOTg==
+
 expo-linking@~1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/expo-linking/-/expo-linking-1.0.3.tgz#8c0f68e89262d09d4b280479010ac21ccfa1e971"
